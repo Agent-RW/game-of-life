@@ -1,0 +1,57 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+:root {
+    
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+body *:not(script) {
+    display: flex;
+}
+
+#header {
+    height: calc(60px + 3%);
+    flex-shrink: 0;
+}
+
+#main {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.sidebar {
+    width: calc(120px + 5%);
+}
+
+.content {
+    flex-grow: 1;
+}
+
+#footer {
+    height: calc(60px + 3%);
+    flex-shrink: 0;
+}
