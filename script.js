@@ -1,19 +1,36 @@
 const taskList = document.getElementById("task-list");
 
 function setupTaskList() {
-    const newTaskButton = document.querySelector(".sidebar").querySelector("button");
+    let newTaskButton = document.querySelector(".sidebar").querySelector("button");
     newTaskButton.addEventListener("click", addTask);
 
     addTask();
 }
 
-function addTask() {
-    let taskInput = document.createElement("input");
-    taskInput.style = "text";
-    let newTask = document.createElement("li").appendChild(taskInput);
-    newTask.value = "Task Name";
+/*
+Create dom elements for a task item
+*/
+function createTask() {
+    let task = document.createElement("div");
 
-    taskList.appendChild(newTask);
+    let nameInput = document.createElement("input");
+    nameInput.style = "text";
+    nameInput.value = "Task Name";
+    task.appendChild(nameInput);
+
+    let rmButton = document.createElement("button");
+    rmButton.value = "x";
+    task.appendChild(rmButton);
+
+    rmButton.addEventListener("click", () => {
+        task.remove();
+    })
+
+    return task;
+}
+
+function addTask() {
+    taskList.appendChild(createTask());
     console.log("New Task Button Clicked");
 }
 
