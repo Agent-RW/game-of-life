@@ -10,10 +10,6 @@
     margin: 0;
 }
 
-:root {
-    
-}
-
 body {
     /* 3. Add accessible line-height */
     line-height: 1.5;
@@ -43,8 +39,21 @@ body *:not(script) {
     flex-grow: 1;
 }
 
+#main > * {
+    border: solid thin black;
+}
+
 .sidebar {
     width: calc(120px + 5%);
+    display: flex;
+    flex-direction: column;
+}
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none inside;
+    padding-left: 10px;
 }
 
 .content {
